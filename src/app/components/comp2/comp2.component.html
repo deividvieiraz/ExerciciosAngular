@@ -1,0 +1,24 @@
+<p>********** Componente 2 **********</p>
+
+<p>>>> If/Else</p>
+
+@if(idade >= 18) {
+<p>Acesso permitido</p>
+} @else {
+<p>Acesso negado</p>
+}
+
+<input type="number" id="idade" (change)="update()" min="0" />
+
+<p>>>> Lista Dinâmica</p>
+
+<ul>
+  @for (tarefa of tarefas; track $index) {
+  <li>
+    {{ tarefa }}
+    <button value="Remover" (click)="remover(tarefa)">Remover</button>
+  </li>
+  } @empty {
+  <li>Nenhuma tarefa pendente</li>
+  }
+</ul>

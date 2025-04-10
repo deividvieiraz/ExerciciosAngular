@@ -1,0 +1,22 @@
+<p>********** Componente 1 **********</p>
+
+<p>>>> Switch</p>
+@switch (mes) { @case (1) {
+<p>Janeiro</p>
+} @case (2) {
+<p>Fevereiro</p>
+} @default {
+<p>Mês não encontrado</p>
+} }
+
+<input type="number" id="mes" (change)="update()" min="1" max="12" />
+
+<p>>>> For</p>
+
+<ul>
+  @for (iten of itens; track $index) {
+  <li>{{ iten }}</li>
+  } @empty {
+  <li>Nenhum item na lista</li>
+  }
+</ul>
