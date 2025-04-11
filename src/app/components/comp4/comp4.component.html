@@ -1,0 +1,56 @@
+<p>********** Componente 4 **********</p>
+
+<p>>>> Switch com números e Strings</p>
+@switch (numero) { @case (1) {
+<p>Um</p>
+} @case (2) {
+<p>Dois</p>
+} @default {
+<p>Valor não reconhecido</p>
+} }
+
+<p>>>> Login</p>
+
+<input type="text" id="nome" placeholder="Nome" />
+<input type="password" id="senha" placeholder="Senha" />
+
+<p>>>> Lista de produtos com condicionais</p>
+
+<ul>
+  @for (produto of produtos; track produto.nome) { @if(produto.promocao) {
+  <li class="promocao">
+    {{ "Nome: " + produto.nome + ", Preço: " + produto.preco }}
+  </li>
+  } @else {
+  <li>
+    {{ "Nome: " + produto.nome + ", Preço: " + produto.preco }}
+  </li>
+  } } @empty {
+  <li>Nenhum produto cadastrado</li>
+  }
+</ul>
+
+<p>>>> Calculadora</p>
+
+<input type="number" id="n1" placeholder="Numero 1" />
+<input type="number" id="n2" placeholder="Numero 2" />
+
+<select name="status" id="operacao">
+  <option value="">Selecione</option>
+  <option value="so">Soma</option>
+  <option value="su">Subtração</option>
+  <option value="di">Divisão</option>
+  <option value="mu">Multiplicação</option>
+</select>
+
+@switch (operacao) { @case ("so") {
+<p>Janeiro</p>
+} @case ("su") {
+<p>Fevereiro</p>
+} @case ("di") {
+<p>Fevereiro</p>
+} @case ("mu") {
+<p>Fevereiro</p>
+} @default {
+<p>Mês não encontrado</p>
+} }

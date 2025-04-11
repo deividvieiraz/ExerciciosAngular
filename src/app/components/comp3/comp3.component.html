@@ -17,3 +17,15 @@
   <option value="enviado">Enviado</option>
   <option value="entregue">Entregue</option>
 </select>
+
+<p>>>> Lista de objetos</p>
+
+<ul>
+  @for (usuario of usuarios; track usuario.nome) {
+  <li>
+    {{ "Nome: " + usuario.idade + ", Idade: " + usuario.idade }}
+  </li>
+  } @empty {
+  <li>Nenhum usuário cadastrado</li>
+  }
+</ul>

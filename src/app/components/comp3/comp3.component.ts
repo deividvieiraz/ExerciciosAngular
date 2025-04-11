@@ -13,4 +13,11 @@ export class Comp3Component {
     update() {
         this.status = (document.getElementById("status") as HTMLInputElement).value
     }
+
+    usuarios:Usuario[] = [{nome: "Ana", idade: 18}, {nome: "Carlos", idade: 25}]
+}
+
+interface Usuario {
+  nome:string;
+  idade:number;
 }
