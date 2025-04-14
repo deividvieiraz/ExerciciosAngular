@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Comp4Component } from './comp4.component';
+import { Component } from '@angular/core';
 
 describe('Comp4Component', () => {
   let component: Comp4Component;

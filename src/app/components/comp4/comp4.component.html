@@ -11,8 +11,16 @@
 
 <p>>>> Login</p>
 
-<input type="text" id="nome" placeholder="Nome" />
-<input type="password" id="senha" placeholder="Senha" />
+<input type="email" [(ngModel)]="email" placeholder="Email" (ngModelChange)="validarLogin()" />
+<input type="password" [(ngModel)]="senha" placeholder="Senha" (ngModelChange)="validarLogin()" />
+
+@if (mensagem === 'obrigatorio') {
+<p>Campos obrigatórios!</p>
+} @if (mensagem === 'invalido') {
+<p>Credenciais inválidas!</p>
+} @if (mensagem === 'sucesso') {
+<p>Login bem-sucedido!</p>
+}
 
 <p>>>> Lista de produtos com condicionais</p>
 
@@ -32,10 +40,10 @@
 
 <p>>>> Calculadora</p>
 
-<input type="number" id="n1" placeholder="Numero 1" />
-<input type="number" id="n2" placeholder="Numero 2" />
+<input type="number" [(ngModel)]="n1" placeholder="Número 1" (change)="calcular()" />
+<input type="number" [(ngModel)]="n2" placeholder="Número 2" (change)="calcular()" />
 
-<select name="status" id="operacao">
+<select [(ngModel)]="operacao" (change)="calcular()">
   <option value="">Selecione</option>
   <option value="so">Soma</option>
   <option value="su">Subtração</option>
@@ -44,13 +52,19 @@
 </select>
 
 @switch (operacao) { @case ("so") {
-<p>Janeiro</p>
+<p>Você escolheu Soma</p>
 } @case ("su") {
-<p>Fevereiro</p>
+<p>Você escolheu Subtração</p>
 } @case ("di") {
-<p>Fevereiro</p>
+<p>Você escolheu Divisão</p>
 } @case ("mu") {
-<p>Fevereiro</p>
+<p>Você escolheu Multiplicação</p>
 } @default {
-<p>Mês não encontrado</p>
+<p>Escolha a operação</p>
 } }
+
+@if (resultado !== null) {
+<p>Resultado: {{ resultado }}</p>
+} @if (erroDivisao) {
+<p>Erro: divisão por zero!</p>
+}
